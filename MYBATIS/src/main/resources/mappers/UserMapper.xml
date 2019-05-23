@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<!-- namespace:映射的接口的全名 -->
+<mapper namespace="cn.tedu.mybatis.mapper.UserMapper">
+	<!-- 根据执行的SQL种类选择节点 -->
+	<!-- id：抽象方法的名称 -->
+	<!-- parameterType:抽象方法的参数类型 -->
+	<!-- SQL语句中的参数使用#｛｝框住User类中的属性名 -->
+	<insert id="insert" useGeneratedKeys="true"
+	keyProperty="id" parameterType="cn.tedu.mybatis.entity.User">
+		INSERT INTO t_user(
+		username,password,age,phone,email
+		) VALUES(
+		#{username},#{password},#{age},#{phone},#{email}
+		)
+	</insert>
+	<select id="findAll" resultType="cn.tedu.mybatis.entity.User">
+		select * from t_user
+	</select>
+	<select id="findByUsername"
+		resultType="cn.tedu.mybatis.entity.User">
+		select * from t_user where username=#{username}
+	</select>
+	<update id="updatePasswordByAge">
+		update t_user set
+		password=#{password}
+		where
+		age&lt;#{age}
+	</update>
+</mapper>
