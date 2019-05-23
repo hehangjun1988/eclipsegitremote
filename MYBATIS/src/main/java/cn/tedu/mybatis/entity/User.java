@@ -1,5 +1,5 @@
 package cn.tedu.mybatis.entity;
-
+//ÎÒ°®Äã
 import java.io.Serializable;
 
 public class User implements Serializable{
