@@ -1,5 +1,5 @@
 package cn.tedu.mybatis.entity;
-//wo heng ni
+//wo ai ni
 import java.io.Serializable;
 
 public class User implements Serializable{
